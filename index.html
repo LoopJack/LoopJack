@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="Conoce PresCasa Hernández. Orientación cercana y soluciones financieras pensadas para ti. Llama al 1.829.459.2323.">
+  <title>Hernández | PresCasa</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f4ee;
+      --white: #fffefa;
+      --ink: #1c3028;
+      --muted: #66746d;
+      --green: #234b39;
+      --green-dark: #183728;
+      --sage: #dce5da;
+      --gold: #bd9652;
+      --line: #e4e3da;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin-inline: auto; }
+    .topbar { border-bottom: 1px solid var(--line); }
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 11px; text-decoration: none; }
+    .brand-mark {
+      width: 39px; height: 39px; display: grid; place-items: center;
+      border: 1px solid var(--gold); border-radius: 50%; color: var(--green);
+      font-family: var(--serif); font-size: 19px;
+    }
+    .brand-name { font-family: var(--serif); font-size: 18px; font-weight: 700; letter-spacing: .13em; }
+    .brand-name small { display: block; color: var(--muted); font: 10px var(--sans); letter-spacing: .2em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+    .nav-links a { color: var(--muted); font-size: 13px; text-decoration: none; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-phone { color: var(--green) !important; font-weight: 700; }
+
+    .hero { padding: 66px 0 78px; overflow: hidden; }
+    .hero-copy { max-width: 700px; margin: 0 auto; text-align: center; }
+    .eyebrow { color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 { margin: 9px 0 13px; font: 500 clamp(42px, 7vw, 75px)/1.02 var(--serif); letter-spacing: -.045em; }
+    .hero h1 span { color: var(--green); }
+    .hero-copy > p { max-width: 530px; margin: 0 auto; color: var(--muted); font-size: 16px; }
+    .actions { margin-top: 26px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+    .button {
+      min-height: 48px; display: inline-flex; align-items: center; justify-content: center;
+      padding: 0 22px; border: 1px solid var(--green); border-radius: 3px;
+      background: var(--green); color: white; font-size: 13px; font-weight: 700;
+      text-decoration: none; transition: background .2s, color .2s;
+    }
+    .button:hover { background: var(--green-dark); }
+    .button.secondary { background: transparent; color: var(--green); }
+    .button.secondary:hover { background: var(--sage); }
+
+    /* Conceptual, non-photorealistic US$100 canopy spanning the H–Z wordmark. */
+    .canopy-stage { position: relative; max-width: 900px; margin: 51px auto 0; padding: 0 12px; }
+    .note-canopy {
+      position: relative; z-index: 1; width: min(660px, 88%); height: 92px;
+      margin: 0 auto -6px; display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 27px; overflow: hidden; transform: rotate(-1.5deg);
+      border: 2px solid #54725c; border-radius: 48% 48% 8px 8px / 78% 78% 8px 8px;
+      background: repeating-linear-gradient(0deg, #e1eadb 0 5px, #d6e2d3 5px 7px);
+      box-shadow: 0 9px 19px #1c30281a;
+    }
+    .note-canopy::before, .note-canopy::after {
+      position: absolute; content: ""; inset: 9px 13px; border: 1px solid #839783;
+      border-radius: 48% 48% 5px 5px / 75% 75% 5px 5px; pointer-events: none;
+    }
+    .note-canopy::after { inset: 17px 24px; border-color: #a7b49f; }
+    .note-label, .note-value { z-index: 1; color: #35533d; font-family: var(--serif); font-weight: 700; }
+    .note-label { font-size: clamp(11px, 2vw, 15px); letter-spacing: .08em; }
+    .note-value { font-size: clamp(21px, 3.8vw, 34px); }
+    .note-seal {
+      z-index: 1; width: 47px; height: 47px; display: grid; place-items: center;
+      border: 1px solid #748b70; border-radius: 50%; color: #48684d; font: 16px var(--serif);
+    }
+    .wordmark {
+      position: relative; z-index: 2; display: flex; align-items: baseline; justify-content: center;
+      color: var(--green-dark); font: 500 clamp(40px, 8.6vw, 92px)/1 var(--serif);
+      letter-spacing: .12em; text-shadow: 0 2px 0 var(--paper);
+    }
+    .wordmark span { color: var(--gold); font-size: .43em; letter-spacing: .16em; margin: 0 .42em; }
+    .canopy-caption { margin: 16px 0 0; color: var(--muted); font-size: 10px; letter-spacing: .12em; text-align: center; text-transform: uppercase; }
+
+    .trust-strip { border-block: 1px solid var(--line); background: #efeee7; }
+    .trust-inner { min-height: 70px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 38px; color: var(--green); font-size: 12px; font-weight: 600; }
+    .trust-inner span::before { content: "•"; margin-right: 10px; color: var(--gold); }
+    section.content-section { padding: 82px 0; }
+    .section-heading { max-width: 620px; margin: 0 auto 38px; text-align: center; }
+    .section-heading h2 { margin: 8px 0 12px; font: 500 clamp(31px, 4vw, 43px)/1.13 var(--serif); letter-spacing: -.025em; }
+    .section-heading p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card { min-height: 190px; padding: 27px; border: 1px solid var(--line); background: var(--white); }
+    .card-number { color: var(--gold); font: 18px var(--serif); }
+    .card h3 { margin: 18px 0 8px; font: 600 18px var(--serif); }
+    .card p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .process { background: var(--sage); }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 920px; margin: 0 auto; }
+    .step { padding: 8px 20px; text-align: center; }
+    .step-icon { width: 42px; height: 42px; margin: 0 auto 15px; display: grid; place-items: center; border: 1px solid #9aab98; border-radius: 50%; color: var(--green); font: 17px var(--serif); }
+    .step h3 { margin-bottom: 6px; font: 600 17px var(--serif); }
+    .step p { margin: 0; color: #5e6f64; font-size: 13px; }
+    .contact-panel { padding: 43px 24px; background: var(--green); color: white; text-align: center; }
+    .contact-panel .eyebrow { color: #d7c18e; }
+    .contact-panel h2 { margin: 8px 0 10px; font: 500 clamp(30px, 4vw, 42px) var(--serif); }
+    .contact-panel p { margin-bottom: 22px; color: #e0e8e1; font-size: 14px; }
+    .contact-panel .button { border-color: white; background: white; color: var(--green); }
+    .contact-panel .button:hover { background: var(--sage); }
+    footer { padding: 25px 0; }
+    .footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; color: var(--muted); font-size: 12px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 19px; }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { color: var(--green); }
+
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 34px, 540px); }
+      .nav { min-height: 68px; }
+      .nav-links a:not(.nav-phone) { display: none; }
+      .nav-links { gap: 0; }
+      .nav-phone { font-size: 12px !important; }
+      .hero { padding: 52px 0 58px; }
+      .hero-copy > p { font-size: 14px; }
+      .canopy-stage { margin-top: 40px; }
+      .note-canopy { height: 74px; padding: 10px 19px; }
+      .note-seal { width: 36px; height: 36px; font-size: 13px; }
+      section.content-section { padding: 62px 0; }
+      .cards { grid-template-columns: 1fr; gap: 12px; }
+      .card { min-height: auto; padding: 22px; }
+      .card h3 { margin-top: 10px; }
+      .steps { grid-template-columns: 1fr; gap: 22px; }
+      .step { padding: 0 12px; }
+      .footer-inner { justify-content: center; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Navegación principal">
+      <a class="brand" href="#inicio" aria-label="Hernández PresCasa, inicio">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span class="brand-name">HERNÁNDEZ<small>PresCasa</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#propuesta">Nuestra propuesta</a>
+        <a href="#proceso">Cómo funciona</a>
+        <a class="nav-phone" href="tel:+18294592323">1.829.459.2323</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-copy wrap">
+        <span class="eyebrow">PresCasa · Atención personalizada</span>
+        <h1 id="hero-title">Confianza para avanzar.<br><span>Opciones para ti.</span></h1>
+        <p>En PresCasa Hernández te orientamos para que conozcas soluciones financieras que se ajusten a tus necesidades. Hablemos de tu próximo paso.</p>
+        <div class="actions">
+          <a class="button" href="tel:+18294592323">Llama al 1.829.459.2323</a>
+          <a class="button secondary" href="#propuesta">Conoce la propuesta</a>
+        </div>
+      </div>
+
+      <div class="canopy-stage" role="img" aria-label="Representación conceptual de un billete de cien dólares como techo que cubre el nombre Hernández, de la H a la Z">
+        <div class="note-canopy" aria-hidden="true">
+          <span class="note-label">ESTADOS UNIDOS<br>DE AMÉRICA</span>
+          <span class="note-seal">H</span>
+          <span class="note-value">100</span>
+        </div>
+        <div class="wordmark" aria-hidden="true">H<span>·</span>Z</div>
+        <p class="canopy-caption">Una idea de respaldo y protección, de la H a la Z</p>
+      </div>
+    </section>
+
+    <div class="trust-strip" aria-label="Valores de servicio">
+      <div class="trust-inner wrap">
+        <span>Atención cercana</span><span>Orientación clara</span><span>Opciones a tu medida</span>
+      </div>
+    </div>
+
+    <section class="content-section" id="propuesta" aria-labelledby="proposal-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <span class="eyebrow">Nuestra propuesta</span>
+          <h2 id="proposal-title">Una conversación puede abrir nuevas posibilidades.</h2>
+          <p>Te escuchamos, conversamos sobre lo que necesitas y te ayudamos a conocer opciones con claridad y sin complicaciones.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <span class="card-number">01</span>
+            <h3>Te escuchamos</h3>
+            <p>Cuéntanos qué necesitas y cuáles son tus objetivos. Cada situación merece una conversación personal.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">02</span>
+            <h3>Te orientamos</h3>
+            <p>Conoce alternativas y resuelve tus dudas con información presentada de forma sencilla y directa.</p>
+          </article>
+          <article class="card">
+            <span class="card-number">03</span>
+            <h3>Decides con claridad</h3>
+            <p>Revisa los próximos pasos con calma y elige la opción que mejor responda a tus necesidades.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section process" id="proceso" aria-labelledby="process-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <span class="eyebrow">Un proceso sencillo</span>
+          <h2 id="process-title">Estamos aquí para orientarte.</h2>
+          <p>Da el primer paso a tu ritmo. Nuestro equipo te acompañará durante la conversación.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <span class="step-icon" aria-hidden="true">1</span>
+            <h3>Contáctanos</h3>
+            <p>Llama y cuéntanos brevemente cómo podemos ayudarte.</p>
+          </article>
+          <article class="step">
+            <span class="step-icon" aria-hidden="true">2</span>
+            <h3>Conversemos</h3>
+            <p>Revisamos contigo tus necesidades y las alternativas disponibles.</p>
+          </article>
+          <article class="step">
+            <span class="step-icon" aria-hidden="true">3</span>
+            <h3>Explora tus opciones</h3>
+            <p>Obtén orientación para valorar los siguientes pasos con confianza.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-panel" id="contacto" aria-labelledby="contact-title">
+      <div class="wrap">
+        <span class="eyebrow">Hablemos hoy</span>
+        <h2 id="contact-title">Tu próximo paso empieza aquí.</h2>
+        <p>Comunícate con el Sr. Hernández para recibir atención personalizada.</p>
+        <a class="button" href="tel:+18294592323">Llamar: 1.829.459.2323</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner wrap">
+      <span>© 2026 PresCasa Hernández</span>
+      <div class="footer-links">
+        <a href="https://prescasa.com">prescasa.com</a>
+        <a href="tel:+18294592323">1.829.459.2323</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
